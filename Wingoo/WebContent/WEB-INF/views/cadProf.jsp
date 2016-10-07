@@ -183,6 +183,12 @@
 												placeholder="Disciplina*" />
 										</p>
 										<p>
+											<input type="hidden" name="tipo" value="Professor">
+										</p>
+										<p>
+											<input type="hidden" name="status" value="Vivo">
+										</p>
+										<p>
 											<input type="text" name="login" class="form-control"
 												placeholder="Login*" />
 										</p>

@@ -95,8 +95,6 @@ public class ExaminadorController {
 		
 		@RequestMapping("removerExaminador")
 		public String removerExaminador(int idExm){
-			System.out.println("Entrou no remover");
-			System.out.println("examinador = " + idExm);
 				dao.remover(idExm);
 				return "redirect:linkListExm";
 		}
