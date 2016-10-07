@@ -1,0 +1,76 @@
+/* Write your custom CSS here */
+
+.navbar .logo-box a {
+    background-color: #03A9F4;
+    color: white;
+}
+
+.badge.badge-success {
+    background: #03A9F4;
+    color: #FFF;
+}
+
+.label.label-info {
+    background: #03A9F4;
+}
+
+/* FORMS */
+.form-cad-exm{
+	padding:20px 200px;
+	text-align:center;
+}
+
+.form-atribuir-creditos{
+	padding:20px 200px;
+	text-align:center;
+}
+
+h2{
+	margin:20px 0;
+}
+
+.form-atribuir-creditos input{
+	text-align:center;
+}
+
+.form-atribuir-creditos label{
+	font-weight: bold;
+}
+.form-atribuir-creditos .creditosInput{
+	width:220px;
+	margin:0 auto;
+}
+
+.form-atribuir-creditos .creditosInput .btn-addon i {
+	    margin: -7px 0px -7px 0px;
+}
+
+.img-container{
+	width:100px;
+	margin:0 auto;
+	vertical-align: middle;
+}
+
+.img-container img{
+	width:100%;
+    max-height: 150px;
+}
+th{
+	text-align:center;
+	vertical-align: middle !important;
+}
+
+td{
+	text-align:center;
+	vertical-align: middle !important;
+}
+
+
+.btn-primary{
+	background-color:#03A9F4 !important;
+}
+
+.btn-primary:hover{
+	background-color:#53A9F4;;
+	
+}
