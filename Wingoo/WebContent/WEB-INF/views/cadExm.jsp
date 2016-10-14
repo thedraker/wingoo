@@ -40,6 +40,9 @@
         <script src="assets/js/app.js"></script>
         <script src="assets/js/cep-webservice.js"></script>
         <script src="assets/js/global.js"></script>
+        <script src="assets/js/cpf.js"></script>
+        <script src="assets/js/mask.js"></script>
+        
         
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -83,7 +86,7 @@
                 <div id="main-wrapper">
                     <div class="panel panel-white">
                                 <div class="panel-heading clearfix">
-                                    <h4 class="panel-title">Cadastro de Examinador</h4>
+                                    <h2 style="text-align:center; display:block;">Cadastro de Examinador</h2>
                                 </div>
                                 <div class="panel-body">
                                     <form class="form-cad-exm" action="addExaminador" enctype="multipart/form-data" method="post">
@@ -98,15 +101,15 @@
 												placeholder="Email*" />
 										</p>
 										<p>
-											<input type="text" name="cpf" class="form-control"
-												placeholder="CPF*" />
+											<input type="text" name="cpf" id="cpf" class="form-control"
+												placeholder="CPF*" onblur="javascript: validarCPF(this.value);" onkeypress="javascript: mascara(this, cpf_mask);"  maxlength="14" />
 										</p>
 										<div class="row">
 											<div class="col-md-4">
 												<p>
 													<input type="text" name="cep" class="form-control"
 														placeholder="CEP*" maxlength="9"
-														onblur="pesquisacep(this.value);" id="cep" value="" />
+														onblur="pesquisacep(this.value);" onkeyup="maskIt(this,event,'#####-###')" id="cep" value="" />
 												</p>
 											</div>
 											<div class="col-md-8">
@@ -182,7 +185,7 @@
 
 										<p>
 											<input type="text" name="telefone" class="form-control"
-												placeholder="Telefone*" />
+												placeholder="DDD + Telefone*" onkeyup="maskIt(this,event,'(##) ####-####')" maxlength="14"/>
 										</p>
 										<p>
 											<input type="text" name="disciplina" class="form-control"
@@ -203,15 +206,21 @@
 												placeholder="Senha*" />
 										</p>
 										<p>
-											<input type="file" name="arquivo" class="form-control"
-												accept="image/*" onchange="readURL(this);"> <img
-												id="blah" src="#" style="margin: 0 auto" />
+										<div class="input-group">
+                							<label class="input-group-btn">
+                    							<span class="btn btn-primary">
+                       Procurar&hellip; <input type="file" id="input-1" name="arquivo" style="display: none;" multiple accept="image/*" onchange="readURL(this);">
+												</span>
+                							</label>
+                						<input type="text" class="form-control" readonly>
+            							</div>
+										<p>
+										<img id="blah" src="#" style="margin: 0 auto">
 										</p>
 										<p>
-											<label class="label label-info">*Campos obrigatórios</label>
+										<label class="label label-info">*Campos obrigatórios</label>
 										</p>
-
-										<button type="submit" class="btn btn-success">Cadastrar</button>
+										<button type="submit" class="btn btn-primary">Cadastrar</button>
 									</div>
 									
                                     </form>
@@ -221,7 +230,7 @@
            
            <!-- FOOTER -->
          <c:import url="../../footer.jsp"></c:import>
-                
+              
 
             </div><!-- Page Inner -->
         </main><!-- Page Content -->

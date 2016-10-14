@@ -21,6 +21,69 @@ angular.module("wingoo").controller('examinadorController', function($scope, $ht
 		};
 });
 
+/*CONTROLLER EXAMINADOR MORTO*/
+angular.module("wingoo").controller('examinadorControllerMorto', function($scope, $http){
+	
+	var vm = $scope;
+	
+	vm.app = "Wingoo";
+	
+	 $http.get("listExaminadorMorto")
+	    .then(function(response) {
+	        vm.examinadores = response.data;
+	        console.log(vm.examinadores);
+	    });
+	 
+	 vm.idmodal = null;
+		vm.passa_id = function(id){
+			vm.idmodal = id;
+			console.log(vm.idmodal);
+			console.log(id);
+		};
+});
+
+/*CONTROLLER PROFESSOR*/
+angular.module("wingoo").controller('professorController', function($scope, $http){
+	
+	var vm = $scope;
+	
+	vm.app = "Wingoo";
+	
+	 $http.get("listProfessor")
+	    .then(function(response) {
+	        vm.professores = response.data;
+	        console.log(vm.professores);
+	    });
+	 
+	 vm.idmodal = null;
+		vm.passa_id = function(id){
+			vm.idmodal = id;
+			console.log(vm.idmodal);
+			console.log(id);
+		};
+});
+
+/*CONTROLLER PROFESSOR*/
+angular.module("wingoo").controller('professorControllerMorto', function($scope, $http){
+	
+	var vm = $scope;
+	
+	vm.app = "Wingoo";
+	
+	 $http.get("listProfessorMorto")
+	    .then(function(response) {
+	        vm.professores = response.data;
+	        console.log(vm.professores);
+	    });
+	 
+	 vm.idmodal = null;
+		vm.passa_id = function(id){
+			vm.idmodal = id;
+			console.log(vm.idmodal);
+			console.log(id);
+		};
+});
+
 /*CONTROLLER ATRIBUIR CRÉDITOS*/
 angular.module("wingoo").controller('atribuirCreditoController', function($scope){
 	

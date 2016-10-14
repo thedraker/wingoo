@@ -68,7 +68,28 @@ public class ExaminadorController {
 		        Examinador.put("nome", e.getNome());
 		        Examinador.put("login", e.getLogin());
 		        Examinador.put("senha", e.getSenha());
-		        Examinador.put("cep", e.getCep());
+		        Examinador.put("cpf", e.getCpf());
+		        Examinador.put("foto", e.getFoto64());
+		        entities.add(Examinador);
+		    }
+		    return new ResponseEntity<Object>(entities, HttpStatus.OK);
+		}
+		
+		@RequestMapping(value="listExaminadorMorto", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+		public @ResponseBody ResponseEntity<Object> getAllMorto() throws JSONException {
+		    List<Pessoa> examinadorListMorto = dao.getExaminadorMorto();
+		    
+		    System.out.println(examinadorListMorto);
+		    
+		    List<JSONObject> entities = new ArrayList<JSONObject>();
+		    for (Pessoa e : examinadorListMorto) {
+		        JSONObject Examinador = new JSONObject();
+		        Examinador.put("id", e.getIdPessoa());
+		        Examinador.put("disciplina", e.getDisciplina());
+		        Examinador.put("nome", e.getNome());
+		        Examinador.put("login", e.getLogin());
+		        Examinador.put("senha", e.getSenha());
+		        Examinador.put("cpf", e.getCpf());
 		        Examinador.put("foto", e.getFoto64());
 		        entities.add(Examinador);
 		    }
@@ -93,9 +114,14 @@ public class ExaminadorController {
 			return "redirect:linkListExm";
 		}
 		
-		@RequestMapping("removerExaminador")
+		@RequestMapping("desativarExaminador")
 		public String removerExaminador(int idExm){
-				dao.remover(idExm);
+				dao.desativarExaminador(idExm);
 				return "redirect:linkListExm";
+		}
+		@RequestMapping("reativarExaminador")
+		public String linkReativar(int idExm){
+			dao.reativarExaminador(idExm);
+			return "redirect:linkOffExm";
 		}
 }

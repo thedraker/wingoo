@@ -79,7 +79,7 @@
             <c:import url="../../sidebar-adm.jsp"></c:import>
             
             <!-- HOME -->
-            <div class="page-inner" ng-controller="examinadorController">
+            <div class="page-inner" ng-controller="professorControllerMorto">
                 <div id="main-wrapper">
                     <div class="panel panel-white">
                                 <div class="panel-body">
@@ -92,26 +92,48 @@
 													<th>ID</th>
 													<th>Foto</th>
 													<th>Nome</th>
-													<th>Disciplina</th>
+													<th>CPF</th>
 													<th>Login</th>
 													<th>Senha</th>
-													<th>CEP</th>
-													<th>Visualizar</th>
+													<th>Disciplina</th>
+													<th>Reativar</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr ng-repeat="data in examinadores | filter:criterioDeBusca">
+												<tr ng-repeat="data in professores | filter:criterioDeBusca">
 													<td>{{data.map.id}}</td>
 													<td><div class="img-container">
 															<img ng-src="data:image/JPEG;base64, {{data.map.foto}}">
 														</div></td>
 													<td>{{data.map.nome}}</td>
-													<td>{{data.map.disciplina}}</td>
+													<td>{{data.map.cpf}}</td>
 													<td>{{data.map.login}}</td>
 													<td>{{data.map.senha}}</td>
-													<td>{{data.map.cep}}</td>
-													<td class="centered"><button
-															class="btn btn-primary btn-sm fa fa-pencil"></button></td>
+													<td>{{data.map.disciplina}}</td>
+													<td class="centered">
+													<button ng-click="passa_id(data.map.id)"
+															class="btn btn-primary btn-sm fa fa-pencil" data-toggle="modal" data-target="#modal-excluir" >
+														</button>
+														</td>
+														<div id="modal-excluir" class="modal fade" role="dialog">
+														  <div class="modal-dialog modal-sm">
+														
+														    <!-- Modal content-->
+														    <div class="modal-content">
+														      <div class="modal-header">
+														        <button type="button" class="close" data-dismiss="modal">&times;</button>
+														        <h4 class="modal-title">Reativar Professor</h4>
+														      </div>
+														      <div class="modal-body">
+														        <p>Tem certeza que deseja reativar este Professor?</p>
+														      </div>
+														      <div class="modal-footer">
+														        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+														        <a type="button" class="btn btn-danger" href="reativarProfessor?idProf={{idmodal}}">Confirmar</a>
+														      </div>
+														    </div>
+														  </div>
+														</div>
 													
 												</tr>
 											</tbody>

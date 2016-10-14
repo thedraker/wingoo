@@ -6,7 +6,7 @@
     <head>
         
         <!-- Title -->
-        <title>Admin | Créditos Professores</title>
+        <title>Aluno | Dashboard</title>
         
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
@@ -38,8 +38,6 @@
         <script src="assets/js/angular-locale_pt-br.js"></script>
         <script src="assets/js/angular-route.min.js"></script>
         <script src="assets/js/app.js"></script>
-        <script src="assets/js/cep-webservice.js"></script>
-        <script src="assets/js/global.js"></script>
         
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -74,50 +72,22 @@
         </form><!-- Search Form -->
         <main class="page-content content-wrap">
             <!-- NAVBAR-->
-            <c:import url="../../navbar-adm.jsp"></c:import>
+            <c:import url="../../navbar-aluno.jsp"></c:import>
             <!-- SIDEBAR -->
-            <c:import url="../../sidebar-adm.jsp"></c:import>
-            
+            <c:import url="../../sidebar-aluno.jsp"></c:import>
             <!-- HOME -->
-            <div class="page-inner" ng-controller="professorController">
+            <div class="page-inner">
+                
                 <div id="main-wrapper">
-                    <div class="panel panel-white">
-                                <div class="panel-body">
-                                
-                                <h2 style="text-align:center; display:block;">Professores Clientes</h2>
-                                <input name="search" class="form-control search-input" placeholder="O que você está buscando?" type="text" ng-model="criterioDeBusca"/>
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <thead>
-												<tr>
-													<th>ID</th>
-													<th>Nome</th>
-													<th>CPF</th>
-													<th>Disciplina</th>
-													<th>Créditos</th>
-													<th>Atribuir Créditos</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr ng-repeat="data in professores | filter:criterioDeBusca">
-													<td>{{data.map.id}}</td>
-													<td>{{data.map.nome}}</td>
-													<td>{{data.map.cpf}}</td>
-													<td>{{data.map.disciplina}}</td>
-													<td>{{data.map.creditos}}</td>
-													<td class="centered"><a class="btn btn-primary btn-sm fa fa-pencil" href="linkCreditos?idProf={{data.map.id}}"></a></td>
-												</tr>
-											</tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row">
+                   
+                    </div><!-- Row -->
+                    
                 </div><!-- Main Wrapper -->
                 
-          <!-- FOOTER -->
-         <c:import url="../../footer.jsp"></c:import>
-                
-
+            <!-- FOOTER -->
+         	<c:import url="../../footer.jsp"></c:import>
+            
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
         

@@ -83,29 +83,36 @@
                       <div class="panel-body">
                       
                       		<h2 style="text-align:center; display:block;">Alterar Professor</h2>
-                      		<form class="form-cad-exm" action="addExaminador" enctype="multipart/form-data" method="post">
+                      		<form action="alteraProfessor" class="form-cad-exm"  method="post">
                                         <div class="row">
 									<div class="col-lg-12">
+									<p>
+									<input type="text" name="nome" class="form-control"
+												placeholder="Nome*" value="${professor.idPessoa}"/>
 										<p>
 											<input type="text" name="nome" class="form-control"
-												placeholder="Nome*" />
+												placeholder="Nome*" value="${professor.nome}"/>
 										</p>
 										<p>
 											<input type="email" name="email" class="form-control"
-												placeholder="Email*" />
+												placeholder="Email*" value="${professor.email}"/>
+										</p>
+										<p>
+											<input type="text" name="cpf" class="form-control"
+												placeholder="CPF*" value="${professor.cpf}"/>
 										</p>
 										<div class="row">
 											<div class="col-md-4">
 												<p>
 													<input type="text" name="cep" class="form-control"
 														placeholder="CEP*" maxlength="9"
-														onblur="pesquisacep(this.value);" id="cep" value="" />
+														onblur="pesquisacep(this.value);" id="cep" value="${professor.cep}" />
 												</p>
 											</div>
 											<div class="col-md-8">
 												<p>
 													<input type="text" name="endereco" class="form-control"
-														placeholder="Endereço*" type="text" id="rua" />
+														placeholder="Endereço*" type="text" id="rua" value="${professor.endereco}"/>
 												</p>
 											</div>
 										</div>
@@ -113,33 +120,33 @@
 											<div class="col-md-4">
 												<p>
 													<input type="text" name="numero" class="form-control"
-														placeholder="Número*" id="numero" />
+														placeholder="Número*" id="numero" value="${professor.numero}"/>
 												</p>
 											</div>
 											<div class="col-md-8">
 												<p>
 													<input type="text" name="complemento" class="form-control"
-														placeholder="Complemento" />
+														placeholder="Complemento" value="${professor.complemento}"/>
 												</p>
 											</div>
 										</div>
 
 										<p>
 											<input type="text" name="bairro" class="form-control"
-												placeholder="Bairro*" id="bairro" />
+												placeholder="Bairro*" id="bairro" value="${professor.bairro}"/>
 										</p>
 
 										<div class="row">
 											<div class="col-md-8">
 												<p>
 													<input type="text" name="cidade" class="form-control"
-														placeholder="Cidade*" id="cidade" />
+														placeholder="Cidade*" id="cidade" value="${professor.bairro}"/>
 												</p>
 											</div>
 											<div class="col-md-4">
 												<p>
 													<select class="form-control" name="estado" required id="uf">
-														<option value="">UF*</option>
+														<option value="${professor.estado}">${professor.estado}</option>
 														<option>AC</option>
 														<option>AL</option>
 														<option>AP</option>
@@ -175,24 +182,26 @@
 
 										<p>
 											<input type="text" name="telefone" class="form-control"
-												placeholder="Telefone*" />
+												placeholder="Telefone*" value="${professor.telefone}"/>
 										</p>
 										<p>
 											<input type="text" name="disciplina" class="form-control"
-												placeholder="Disciplina*" />
+												placeholder="Disciplina*" value="${professor.disciplina}"/>
 										</p>
 										<p>
 											<input type="text" name="login" class="form-control"
-												placeholder="Login*" />
+												placeholder="Login*" value="${professor.login}"/>
 										</p>
 										<p>
 											<input type="text" name="senha" class="form-control"
-												placeholder="Senha*" />
+												placeholder="Senha*" value="${professor.senha}"/>
 										</p>
-										<p>
-											<input type="file" name="arquivo" class="form-control"
-												accept="image/*" onchange="readURL(this);"> <img
-												id="blah" src="#" style="margin: 0 auto" />
+<p>
+									<div class="img-container">
+
+									<img ng-src="data:image/JPEG;base64, ${professor.foto64}">
+														</div>
+														Deseja alterar sua foto? <a href="alteraFoto?idPessoa=${professor.idPessoa}">Clique aqui.</a>
 										</p>
 										<p>
 											<label class="label label-info">*Campos obrigatórios</label>

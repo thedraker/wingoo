@@ -82,20 +82,22 @@
                     <div class="row">
                    		<div class="panel panel-white">
                                 <div class="panel-body">
-                               	 	<form class="form-atribuir-creditos" ng-controller="atribuirCreditoController">
+                               	 	<form action="addCreditos" class="form-atribuir-creditos" ng-controller="atribuirCreditoController">
                                	 			<h2>Atribuir créditos</h2>
 			                               	<div class="form-group">
+			                               	<input type="hidden" name="idPessoa" value="${professor.idPessoa}"/>
 			                               		<label for="nome">Nome</label>
-			 									<input type="text" class="form-control" id="nome" value="Aqui recebe o nome do professor" readonly=""/>
+			 									<input type="text" class="form-control" id="nome" value="${professor.nome}" readonly/>
 			 								</div>
 			 								<div class="form-group">
 			 									<label for="disciplina">Disciplina</label>
-			 									<input type="text" class="form-control" id="disciplina" value="Aqui recebe a disciplina do professor" readonly=""/>
+			 									<input type="text" class="form-control" id="disciplina" value="${professor.disciplina}" readonly/>
 			 								</div>
 			 								
 			 								<div class="form-group">
+			 									<label for="creditos">Quantidade Atual:</label> <label>${professor.creditos}</label><br>
 			 									<label for="creditos">Créditos</label>
-			 									<input type="numeric" class="form-control" id="creditos" value="{{creditos}}" readonly=""/>
+			 									<input type="numeric" class="form-control" id="creditos" name=creditos value="{{creditos}}" readonly/>
 			 								</div>
 			 								<div class="creditosInput">
 				 								<div class="form-group">
@@ -106,7 +108,7 @@
 		 										
 		 									</div>
 		 									
-		 									<button type="button" class="btn btn-success btn-rounded">Confirmar</button>
+		 									<button type="submit" class="btn btn-success">Confirmar</button>
  									</form>
                                 </div>
                             </div>

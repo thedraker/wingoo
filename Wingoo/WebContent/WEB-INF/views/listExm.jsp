@@ -93,10 +93,10 @@
 													<th>ID</th>
 													<th>Foto</th>
 													<th>Nome</th>
-													<th>Disciplina</th>
+													<th>CPF</th>
 													<th>Login</th>
 													<th>Senha</th>
-													<th>CEP</th>
+													<th>Disciplina</th>
 													<th>Gerenciar</th>
 												</tr>
 											</thead>
@@ -107,10 +107,10 @@
 															<img ng-src="data:image/JPEG;base64, {{data.map.foto}}">
 														</div></td>
 													<td>{{data.map.nome}}</td>
-													<td>{{data.map.disciplina}}</td>
+													<td>{{data.map.cpf}}</td>
 													<td>{{data.map.login}}</td>
 													<td>{{data.map.senha}}</td>
-													<td>{{data.map.cep}}</td>
+													<td>{{data.map.disciplina}}</td>
 													<td class="centered">
 													<a class="btn btn-primary btn-sm fa fa-pencil" href="linkAlterExm?idExm={{data.map.id}}"></a>
 														<button ng-click="passa_id(data.map.id)"
@@ -128,11 +128,11 @@
 														        <h4 class="modal-title">Excluir Examinador</h4>
 														      </div>
 														      <div class="modal-body">
-														        <p>Tem certeza que deseja excluir este Examinador?</p>
+														        <p>Tem certeza que deseja desativar este Examinador?</p>
 														      </div>
 														      <div class="modal-footer">
-														        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-														        <a type="button" class="btn btn-danger" href="removerExaminador?idExm={{idmodal}}">Confirmar</a>
+														        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+														        <a type="button" class="btn btn-danger" href="desativarExaminador?idExm={{idmodal}}">Confirmar</a>
 														      </div>
 														    </div>
 														  </div>
