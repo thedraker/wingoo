@@ -30,8 +30,8 @@ angular.module("wingoo").controller('examinadorControllerMorto', function($scope
 	
 	 $http.get("listExaminadorMorto")
 	    .then(function(response) {
-	        vm.examinadores = response.data;
-	        console.log(vm.examinadores);
+	        vm.examinadoresmortos = response.data;
+	        console.log(vm.examinadoresmortos);
 	    });
 	 
 	 vm.idmodal = null;
@@ -52,6 +52,7 @@ angular.module("wingoo").controller('professorController', function($scope, $htt
 	 $http.get("listProfessor")
 	    .then(function(response) {
 	        vm.professores = response.data;
+	        console.log(response);
 	        console.log(vm.professores);
 	    });
 	 
@@ -63,7 +64,7 @@ angular.module("wingoo").controller('professorController', function($scope, $htt
 		};
 });
 
-/*CONTROLLER PROFESSOR*/
+/*CONTROLLER PROFESSOR MORTO*/
 angular.module("wingoo").controller('professorControllerMorto', function($scope, $http){
 	
 	var vm = $scope;

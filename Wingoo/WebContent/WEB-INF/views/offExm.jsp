@@ -100,7 +100,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr ng-repeat="data in examinadores | filter:criterioDeBusca">
+												<tr ng-repeat="data in examinadoresmortos | filter:criterioDeBusca">
 													<td>{{data.map.id}}</td>
 													<td><div class="img-container">
 															<img ng-src="data:image/JPEG;base64, {{data.map.foto}}">

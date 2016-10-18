@@ -51,6 +51,7 @@ public class ProfessorController {
 		
 		@RequestMapping("alteraProfessor")
 		public String altera(Pessoa professor) {
+			System.out.println(professor);
 			dao.alterarProfessor(professor);	
 			return "redirect:linkListProf";
 		}

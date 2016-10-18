@@ -85,10 +85,9 @@
             <div class="page-inner">
                 <div id="main-wrapper">
                     <div class="panel panel-white">
-                                <div class="panel-heading clearfix">
-                                    <h2 style="text-align:center; display:block;">Cadastro de Examinador</h2>
-                                </div>
                                 <div class="panel-body">
+                                <h2 style="text-align:center; display:block;">Cadastro de Examinador</h2>
+                                
                                     <form class="form-cad-exm" action="addExaminador" enctype="multipart/form-data" method="post">
                                         <div class="row">
 									<div class="col-lg-12">

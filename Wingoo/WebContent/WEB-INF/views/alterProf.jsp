@@ -87,7 +87,7 @@
                                         <div class="row">
 									<div class="col-lg-12">
 									<p>
-									<input type="text" name="nome" class="form-control"
+									<input type="hidden" name="idPessoa" class="form-control"
 												placeholder="Nome*" value="${professor.idPessoa}"/>
 										<p>
 											<input type="text" name="nome" class="form-control"
