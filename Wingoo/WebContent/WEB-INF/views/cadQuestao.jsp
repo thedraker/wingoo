@@ -18,6 +18,11 @@
 	<input type="text" name="status"><br />
 	<label>Marcadores</label>
 	<input type="text" name="marcadores"><br />
+	<label> ALTERNATIVA</label><BR>
+	<label>Conteudo</label>
+	<input type="text" name="conteudo"><br />
+	<label>Correta</label>
+	<input type="text" name="correta"><br />
 	<input type="submit">
 	</form>
 </body>
