@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.wingoo.dao.AlternativaDAO;
+import br.com.wingoo.dao.DisciplinaDAO;
 import br.com.wingoo.dao.QuestaoAlternativaDAO;
 import br.com.wingoo.dao.QuestaoDAO;
 import br.com.wingoo.model.Alternativa;
@@ -17,30 +18,25 @@ import br.com.wingoo.model.Questao_Alternativa;
 @Controller
 public class QuestaoController {
 private final QuestaoDAO dao;
-private final AlternativaDAO daoA;
-private final QuestaoAlternativaDAO daoQA;
+private final DisciplinaDAO daoD;
 
 	
 	@Autowired
-	public QuestaoController(QuestaoDAO daoQ, AlternativaDAO daoA, QuestaoAlternativaDAO daoQA){
+	public QuestaoController(QuestaoDAO daoQ, DisciplinaDAO daoD){
 		this.dao = daoQ;
-		this.daoA = daoA;
-		this.daoQA = daoQA;
+		this.daoD = daoD;
 	}
 	
 	@RequestMapping("cadQuestao")
-	public String cadQuestao(){
+	public String cadQuestao(Model model){
+		model.addAttribute("disciplina", daoD.listar());
 		return "cadQuestao";
 	}
 	
 	@RequestMapping("addQuestao")
-	public String addQuestao(Questao questao, Model model, HttpSession sessao,Alternativa alternativa, Questao_Alternativa q){
+	public String addQuestao(Questao questao, Model model, HttpSession sessao){
 		dao.inserir(questao);
 		sessao.setAttribute("questao", questao);
-		daoA.inserir(alternativa);
-		q.setAlternativa(alternativa);
-		q.setQuestao(questao);
-		daoQA.inserir(q);
 		return "cadAlternativa";
 	}
 

@@ -2,7 +2,8 @@ package br.com.wingoo.model;
 
 public class Disciplina {
 	private int idDisciplina;
-	private String disciplina;
+	private String nomeDisciplina;
+	private String outro;
 	
 	public int getIdDisciplina() {
 		return idDisciplina;
@@ -10,11 +11,19 @@ public class Disciplina {
 	public void setIdDisciplina(int idDisciplina) {
 		this.idDisciplina = idDisciplina;
 	}
-	public String getDisciplina() {
-		return disciplina;
+	public String getNomeDisciplina() {
+		return nomeDisciplina;
 	}
-	public void setDisciplina(String disciplina) {
-		this.disciplina = disciplina;
+	public void setNomeDisciplina(String nomeDisciplina) {
+		this.nomeDisciplina = nomeDisciplina;
 	}
+	public String getOutro() {
+		return outro;
+	}
+	public void setOutro(String outro) {
+		this.outro = outro;
+	}
+	
+
 	
 }

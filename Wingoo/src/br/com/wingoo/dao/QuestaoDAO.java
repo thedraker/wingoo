@@ -18,7 +18,7 @@ public class QuestaoDAO {
 	/*
 	 * Strings SQL
 	 */
-	private String INSERIR = "INSERT INTO questao (dificuldade, enunciado, valor, status, marcadores) VALUES (?,?, ?, ?, ?)";
+	private String INSERIR = "INSERT INTO questao (dificuldade, enunciado, valor, status, marcadores) VALUES (?,?,?,?,?)";
 	/*
 	 * Construtor
 	 */
@@ -30,7 +30,6 @@ public class QuestaoDAO {
 			e.printStackTrace();
 		}
 	}
-	
 	/*
 	 * Método para adicionar Questões
 	 */

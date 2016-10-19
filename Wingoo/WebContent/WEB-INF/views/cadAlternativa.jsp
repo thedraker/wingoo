@@ -8,6 +8,10 @@
 </head>
 <body>
 	<form action="addAlternativa" method="post">
+	<label>Conteudo</label>
+	<input type="text" name="conteudo"><br />
+	<label>Correta</label>
+	<input type="text" name="correta"><br />
 	<label>ID da Questão</label>
 	<input type="text" name="idQuestao" value="${questao.idQuestao}" readonly><br />
 	<input type="submit">
