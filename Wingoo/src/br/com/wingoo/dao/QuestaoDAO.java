@@ -18,7 +18,7 @@ public class QuestaoDAO {
 	/*
 	 * Strings SQL
 	 */
-	private String INSERIR = "INSERT INTO questao (dificuldade, enunciado, valor, status, marcadores) VALUES (?,?,?,?,?)";
+	private String INSERIR = "INSERT INTO questao (dificuldade, enunciado, valor, status, marcadores, id_disciplina) VALUES (?,?,?,?,?,?)";
 	/*
 	 * Construtor
 	 */
@@ -41,13 +41,11 @@ public class QuestaoDAO {
 			ps.setDouble(3, qstao.getValor());
 			ps.setString(4, qstao.getStatus());
 			ps.setString(5, qstao.getMarcadores());
-			//ps.setInt(6, qstao.getPessoa().getIdPessoa());
-			//ps.setInt(6, qstao.getDisciplina().getIdDisciplina());
+			ps.setInt(6, qstao.getDisciplina().getIdDisciplina());
 			ps.execute();
 			ResultSet rs = ps.getGeneratedKeys();
 			if (rs.next()) {
 				qstao.setIdQuestao(rs.getInt(1));
-				
 			}
 			ps.close();
 		} catch (SQLException e) {

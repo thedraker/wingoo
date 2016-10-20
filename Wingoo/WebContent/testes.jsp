@@ -7,8 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<H1> Alternativa </H1>
 <a href="cadAlternativa">Cadastro de Alternativa</a><br />
+<h1> Disciplina</h1>
 <a href="cadDisciplina">Cadastro de Disciplina</a><br />
-<a href="cadQuestao">Cadastro de Questão</a>
+<a href="cadQuestao">Cadastro de Questão</a><br />
+<h1> Turmas </h1>
+<a href="cadTurma">Cadastro de Turma</a><br />
+<a href="linkListaTurma">Listagem de Turmas</a>
 </body>
 </html>
