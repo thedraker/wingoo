@@ -20,7 +20,8 @@ public class DisciplinaDAO {
 	/*
 	 * Strings SQL
 	 */
-	private String INSERIR = "INSERT INTO disciplina, outro (disciplina, outro) VALUES (?,?)";
+	private String INSERIR = "INSERT INTO disciplina (nomeDisciplina) VALUES (?)";
+	private String INSERIROUTRO = "INSERT INTO disciplina (outro) VALUES (?)";
 	private String LISTAR = "SELECT * from disciplina";
 	/*
 	 * Construtor
@@ -41,14 +42,12 @@ public class DisciplinaDAO {
 		try {
 			PreparedStatement ps = this.conexao.prepareStatement(INSERIR);
 			ps.setString(1, disciplina.getNomeDisciplina());
-			ps.setString(2, disciplina.getOutro());
 			ps.execute();
 			ps.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
 	/*
 	 * Método para adicionar Disciplinas
 	 */

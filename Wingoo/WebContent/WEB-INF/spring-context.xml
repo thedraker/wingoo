@@ -24,7 +24,7 @@
   
       <bean id="mysqlDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
   <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-  <property name="url" value="jdbc:mysql://localhost/wingoo"></property>
+  <property name="url" value="jdbc:mysql://localhost/wingo"></property>
   <property name="username" value="root"></property>
   <property name="password" value="root"></property>
   <property name="MaxTotal" value="12"></property>

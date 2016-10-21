@@ -12,5 +12,7 @@
 	<input type="text" name="disciplina"><br />
 	<input type="submit">
 	</form>
+	
+	<a href="cadQuestao">Questao</a>
 </body>
 </html>

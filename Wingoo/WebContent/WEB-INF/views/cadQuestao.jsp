@@ -8,6 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<form action="addNovaDisciplina" method="post">
+		<div id="otherType" style="display:none;">
+<input type="text" name="nomeDisciplina" placeholder="Digite outra disciplina"/>
+<input type="submit">
+</div>
+</form>
 	<form action="addQuestao" method="post">
 	<label>Dificuldade</label>
 	<input type="text" name="dificuldade"><br />
@@ -19,7 +25,19 @@
 	<input type="text" name="status"><br />
 	<label>Marcadores</label>
 	<input type="text" name="marcadores"><br />
+			<label for="db">Disciplina</label>
+<select name="idDisciplina" id="dbType" required>
+   <option>Selecione...</option>
+   <c:forEach items="${disciplina}" var="disciplina">
+   <option value="${disciplina.idDisciplina}">${disciplina.nomeDisciplina}</option>
+   </c:forEach>
+   <option value="other">Outro</option>
+</select>
+
 	<input type="submit">
 	</form>
+<script src="assets/plugins/jquery/jquery-2.1.3.min.js"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="assets/js/outro.js"></script>
 </body>
 </html>
