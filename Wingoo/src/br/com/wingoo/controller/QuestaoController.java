@@ -41,5 +41,11 @@ private final DisciplinaDAO daoD;
 		sessao.setAttribute("questao", questao);
 		return "cadAlternativa";
 	}
+	
+	@RequestMapping("linkListaQuestao")
+	public String listaAdministrador(Model model) {
+		model.addAttribute("questao", dao.getQuestoes());
+		return "listQuestao";
+	}
 
 }

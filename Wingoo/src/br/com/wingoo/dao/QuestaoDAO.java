@@ -4,12 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import br.com.wingoo.model.Disciplina;
+import br.com.wingoo.model.Pessoa;
 import br.com.wingoo.model.Questao;
 
 @Repository
@@ -19,6 +23,7 @@ public class QuestaoDAO {
 	 * Strings SQL
 	 */
 	private String INSERIR = "INSERT INTO questao (dificuldade, enunciado, valor, status, marcadores, id_disciplina) VALUES (?,?,?,?,?,?)";
+	private String BUSCAQUESTOES = "SELECT idQuestao, dificuldade, enunciado, valor, status, marcadores, disciplina.nomeDisciplina FROM questao, disciplina WHERE questao.id_disciplina = disciplina.idDisciplina";
 	/*
 	 * Construtor
 	 */
@@ -50,6 +55,35 @@ public class QuestaoDAO {
 			ps.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+	}
+	/*
+	 * Método para listar todas as 'Questões'
+	 */													
+	public List<Questao> getQuestoes() {
+		try {
+			List<Questao> questoes = new ArrayList<Questao>();
+			PreparedStatement ps = this.conexao.prepareStatement(BUSCAQUESTOES);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Disciplina disciplina = new Disciplina();
+				disciplina.setNomeDisciplina(rs.getString("nomeDisciplina"));
+				
+				Questao questao = new Questao();
+				questao.setIdQuestao(rs.getInt("idQuestao"));
+				questao.setDificuldade(rs.getString("dificuldade"));
+				questao.setEnunciado(rs.getString("enunciado"));
+				questao.setValor(rs.getDouble("valor"));
+				questao.setStatus(rs.getString("status"));
+				questao.setMarcadores(rs.getString("marcadores"));
+				questao.setDisciplina(disciplina);
+				questoes.add(questao);
+			}
+			rs.close();
+			ps.close();
+			return questoes;
+		} catch (SQLException e) {
+			throw new RuntimeException("Erro listando todas as Questoes\n" + e);
 		}
 	}
 }

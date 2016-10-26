@@ -2,6 +2,7 @@ package br.com.wingoo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.wingoo.dao.AlternativaDAO;
@@ -33,5 +34,11 @@ public class AlternativaController {
 		q.setQuestao(questao);
 		daoQ.inserir(q);
 		return "cadAlternativa";
+	}
+	
+	@RequestMapping("linkListaQuestaoAlternativa")
+	public String listaAdministrador(Model model) {
+		model.addAttribute("qa", daoQ.getQuestaoAlternativa());
+		return "listQuestaoAlternativa";
 	}
 }

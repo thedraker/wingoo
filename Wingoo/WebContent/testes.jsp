@@ -11,7 +11,11 @@
 <a href="cadAlternativa">Cadastro de Alternativa</a><br />
 <h1> Disciplina</h1>
 <a href="cadDisciplina">Cadastro de Disciplina</a><br />
+<h1>Questão</h1>
 <a href="cadQuestao">Cadastro de Questão</a><br />
+<a href="linkListaQuestao">Listagem de Questão</a><br />
+<h1>Questão Alternativa</h1>
+<a href="linkListaQuestaoAlternativa">Listagem de Questão Alternativa</a><br />
 <h1> Turmas </h1>
 <a href="cadTurma">Cadastro de Turma</a><br />
 <a href="linkListaTurma">Listagem de Turmas</a>
