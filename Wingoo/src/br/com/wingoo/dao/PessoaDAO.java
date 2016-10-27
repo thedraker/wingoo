@@ -521,7 +521,7 @@ public class PessoaDAO {
 	}
 	
 	/*
-	 * Método para remover Créditos para o Professor
+	 * Método para desativar Examinador
 	 */
 	public void desativarExaminador(int id){
 		try {

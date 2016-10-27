@@ -13,6 +13,7 @@ import br.com.wingoo.dao.QuestaoAlternativaDAO;
 import br.com.wingoo.dao.QuestaoDAO;
 import br.com.wingoo.model.Alternativa;
 import br.com.wingoo.model.Disciplina;
+import br.com.wingoo.model.Pessoa;
 import br.com.wingoo.model.Questao;
 import br.com.wingoo.model.Questao_Alternativa;
 
@@ -47,5 +48,4 @@ private final DisciplinaDAO daoD;
 		model.addAttribute("questao", dao.getQuestoes());
 		return "listQuestao";
 	}
-
 }

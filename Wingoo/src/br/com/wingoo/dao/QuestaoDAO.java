@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 import br.com.wingoo.model.Disciplina;
 import br.com.wingoo.model.Pessoa;
 import br.com.wingoo.model.Questao;
+import br.com.wingoo.model.Turma;
 
 @Repository
 public class QuestaoDAO {

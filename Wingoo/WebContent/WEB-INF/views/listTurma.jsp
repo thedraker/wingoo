@@ -14,6 +14,7 @@
 		<th>Nome</th>
 		<th>Token</th>
 		<th>Status</th>
+		<th colspan="2">Gerenciar</th>
 	</tr>
 	<c:forEach items="${turma}" var="turma">
 	<tr>
@@ -21,6 +22,8 @@
 	<td>${turma.nome}</td>
 	<td>${turma.token}</td>
 	<td>${turma.status}</td>
+	<td><a href="linkAlterTurma?idTurma=${turma.idTurma}">Alterar</a></td>
+	<td><a href="desativarTurma?idTurma=${turma.idTurma}">Desativar</a></td>
 	</tr>
 	</c:forEach>
 </table>

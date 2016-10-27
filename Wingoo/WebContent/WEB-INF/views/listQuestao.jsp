@@ -17,6 +17,7 @@
 		<th>Marcadores</th>
 		<th>Status</th>
 		<th>Disciplina</th>
+		<th>Gerenciar</th>
 	</tr>
 	<c:forEach items="${questao}" var="questao">
 	<tr>
@@ -27,6 +28,8 @@
 	<td>${questao.marcadores}</td>
 	<td>${questao.status}</td>
 	<td>${questao.disciplina.nomeDisciplina}</td>
+	<td><a href="linkAlterQuestao?idQuestao=${turma.idQuestao}">Alterar</a></td>
+	<td><a href="desativarQuestao?idQuestao=${questao.idQuestao}">Desativar</a></td>
 	</tr>
 	</c:forEach>
 </table>

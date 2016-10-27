@@ -16,8 +16,8 @@
 <a href="linkListaQuestao">Listagem de Questão</a><br />
 <h1>Questão Alternativa</h1>
 <a href="linkListaQuestaoAlternativa">Listagem de Questão Alternativa</a><br />
-<h1> Turmas </h1>
+<h1>Turmas </h1>
 <a href="cadTurma">Cadastro de Turma</a><br />
-<a href="linkListaTurma">Listagem de Turmas</a>
+<a href="linkListTurma">Listagem de Turmas</a>
 </body>
 </html>
