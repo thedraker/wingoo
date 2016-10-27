@@ -10,7 +10,7 @@
 <body>
 <table class="table table-bordered">
 	<tr>
-		<th>Id da Questão Alternativa</th>
+		<th>Id</th>
 		<th>Id da Questão</th>
 		<th>Enunciado da Questão</th>
 		<th>Conteudo da Questão</th>
